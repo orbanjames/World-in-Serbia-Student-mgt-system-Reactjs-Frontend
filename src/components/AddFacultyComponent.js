@@ -1,55 +1,56 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import UniversityService from '../services/UniversityService'
+import FacultyService from '../services/FacultyService'
 
-const AddUniversityComponent = () => {
+const AddFacultyComponent = () => {
   const [name, setName] = useState('')
   const [location, setLocation] = useState('')
   const [address, setAddress] = useState('')
-  const [rank, setRank] = useState('')
+  const [university, setUniversity] = useState('')
   const navigate = useNavigate()
   const { id } = useParams()
 
-  const saveOrUpdateUniversity = (e) => {
+  const saveOrUpdateFaculty = (e) => {
     e.preventDefault()
 
-    const university = {
+    const faculty = {
       name,
       location,
       address,
-      rank,
+      university,
     }
 
     if (id) {
-      UniversityService.updateUniversity(id, university)
+      FacultyService.updateFaculty(id, faculty)
         .then(() => {
-          navigate('/universities')
+          navigate('/faculties')
         })
         .catch((error) => console.log(error))
     } else {
-      UniversityService.createUniversity(university)
+      FacultyService.createFaculty(faculty)
         .then(() => {
-          navigate('/universities')
+          navigate('/faculties')
         })
         .catch((error) => console.log(error))
     }
   }
 
   useEffect(() => {
-    UniversityService.getUniversityById(id)
+    FacultyService.getFacultyById(id)
       .then((response) => {
         setName(response.data.name)
         setLocation(response.data.location)
         setAddress(response.data.address)
+        setUniversity(response.data.university)
       })
       .catch((error) => console.log(error))
   }, [id])
 
   const title = () => {
     if (id) {
-      return <h2 className='text-center'>Update University</h2>
+      return <h2 className='text-center'>Update Faculty</h2>
     } else {
-      return <h2 className='text-center'>Add University</h2>
+      return <h2 className='text-center'>Add Faculty</h2>
     }
   }
 
@@ -97,24 +98,24 @@ const AddUniversityComponent = () => {
               </div>
 
               <div className='form-group mb-2'>
-                <div className='form-label'>Rank:</div>
+                <div className='form-label'>University:</div>
                 <input
                   type='text'
-                  placeholder='Enter Rank'
-                  name='Rank'
+                  placeholder='Enter University'
+                  name='university'
                   className='form-control'
-                  value={rank}
-                  onChange={(e) => setRank(e.target.value)}
+                  value={university}
+                  onChange={(e) => setUniversity(e.target.value)}
                 ></input>
               </div>
 
               <button
                 className='btn btn-success'
-                onClick={(e) => saveOrUpdateUniversity(e)}
+                onClick={(e) => saveOrUpdateFaculty(e)}
               >
                 Submit
               </button>
-              <Link to='/universities' className='btn btn-danger mx-1'>
+              <Link to='/faculties' className='btn btn-danger mx-1'>
                 Cancel
               </Link>
             </form>
@@ -125,4 +126,4 @@ const AddUniversityComponent = () => {
   )
 }
 
-export default AddUniversityComponent
+export default AddFacultyComponent
