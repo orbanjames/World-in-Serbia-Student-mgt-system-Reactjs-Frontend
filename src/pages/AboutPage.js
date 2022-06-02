@@ -11,7 +11,7 @@ const AboutPage = () => {
         <img src={aboutImg} alt='nice desk' />
         <article>
           <div className='title'>
-            <h2>About Us</h2>
+            <h2>ABOUT US</h2>
             <div className='underline'></div>
           </div>
           <p>
