@@ -7,13 +7,10 @@ const Services = () => {
     <Wrapper>
       <div className='section-center'>
         <article className='header'>
-          <h3>
-            Custom furniture <br />
-            buit only for you
-          </h3>
+          <h3>The beauty of Academics</h3>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam
-            mollitia non iusto sint nihil, debitis possimus officia impedit?
+            Great Achievers are those who put more efforts to their academics
+            and choose to read in the morning of their lives.
           </p>
         </article>
         <div className='services-center'>
