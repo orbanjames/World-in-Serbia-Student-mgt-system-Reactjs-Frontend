@@ -29,17 +29,6 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='about' element={<About />}></Route>
-        <Route path='cart' element={<Cart />}></Route>
-        <Route path='products' element={<Products />}></Route>
-        <Route path='Products/:id' element={<SingleProduct />}></Route>
-        <Route
-          path='checkout'
-          element={
-            <PrivateRoute>
-              <Checkout />
-            </PrivateRoute>
-          }
-        ></Route>
         <Route path='students' element={<Students />}></Route>
         <Route path='/universities' element={<Universities />}></Route>
         <Route path='/faculties' element={<Faculties />}></Route>

@@ -8,11 +8,7 @@ const Hero = () => {
   return (
     <Wrapper className='section-center'>
       <article className='content'>
-        <h1>
-          Welcome to World in Serbia Students Management System
-          <br />
-          and your best online shop of the century
-        </h1>
+        <h1>Welcome to World in Serbia Students Management System</h1>
         <p>
           The world in Serbia is a project of the Government of Serbia which
           provides scholarships for all levels of studies for students coming
@@ -21,13 +17,6 @@ const Hero = () => {
           Serbian language. More information about the programme can be found at
           the website of the Ministry of Foreign Affairs.
         </p>
-        <p>
-          We are also dedicated to offering best e-commerce services and online
-          shops of the modern world.
-        </p>
-        <Link to='/products' className='btn hero-btn'>
-          shop now
-        </Link>
       </article>
       <article className='img-container'>
         <img src={heroBcg3} alt='nice table' className='main-img' />

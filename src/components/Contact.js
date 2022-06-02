@@ -5,12 +5,15 @@ const Contact = () => {
   return (
     <Wrapper>
       <div className='section-center'>
-        <h3>Join us and get adequate knowledge for your e-commerce projects</h3>
+        <h3>
+          Join us and get adequate knowledge needed to impact the world and live
+          a better life
+        </h3>
         <div className='content'>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-            ipsum quae voluptas? Totam temporibus vel velit amet, consequatur
-            quas sit!
+            You are not far from your comfort zone by subscribing here through
+            your email and all the details about your better tommorrow is
+            available.
           </p>
           <form
             className='contact-form'
